@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'api',
-    'user',
 ]
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [

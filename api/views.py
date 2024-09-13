@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from api.models import Car
 from api.serializers import CarSerializer

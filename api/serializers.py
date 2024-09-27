@@ -1,4 +1,4 @@
-from api.models import Car, Message, User
+from api.models import Car, Message, CustomUser
 from rest_framework import routers, serializers, viewsets # type: ignore
  
 class CarSerializer(serializers.HyperlinkedModelSerializer):
@@ -8,7 +8,7 @@ class CarSerializer(serializers.HyperlinkedModelSerializer):
         
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = User
+        model = CustomUser
         fields = ['id', 'name', 'email', 'username']
 
 class MessageSerializer(serializers.ModelSerializer):

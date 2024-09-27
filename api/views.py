@@ -1,7 +1,7 @@
 from rest_framework.permissions import IsAuthenticated
 
 from django.shortcuts import render
-from api.models import Car, Message, User
+from api.models import Car, Message, CustomUser
 from api.serializers import CarSerializer, MessageSerializer, UserSerializer
 from rest_framework.permissions import AllowAny
 from rest_framework import routers, serializers, viewsets # type: ignore
@@ -43,7 +43,7 @@ class CarCreate(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class UserDeleteUpdateRetrieve(RetrieveUpdateDestroyAPIView):
-    queryset = User.objects.all()
+    queryset = CustomUser.objects.all()
     serializer_class = UserSerializer
 
     permission_classes = [IsAuthenticated]
@@ -56,6 +56,6 @@ class MessageDeleteUpdateRetrieve(RetrieveUpdateDestroyAPIView):
 
 @api_view(['GET'])
 def UserList(request):
-    users = User.objects.all()
+    users = CustomUser.objects.all()
     serializer = UserSerializer(users, many=True)
     return Response(serializer.data)

@@ -1,6 +1,6 @@
 from django.db import models
 
-from elonlar.models import Elonlar
+from elonlar.models import  JobPost
 from user.models import Userlar
 
 class Ariza(models.Model):
@@ -11,7 +11,7 @@ class Ariza(models.Model):
     ]
 
     user = models.ForeignKey(Userlar, on_delete=models.CASCADE, verbose_name="Foydalanuvchi")
-    job = models.ForeignKey(Elonlar, on_delete=models.CASCADE, verbose_name="Ish e'loni")
+    job = models.ForeignKey( JobPost, on_delete=models.CASCADE, verbose_name="Ish e'loni")
     cover_letter = models.TextField(verbose_name="Motivatsiya xati")
     status = models.CharField(max_length=20, choices=ARIZA_HOLATI, default='ko\'rib_chiqilmoqda', verbose_name="Ariza holati")
     date_applied = models.DateTimeField(auto_now_add=True, verbose_name="Ariza topshirilgan sana")

@@ -10,4 +10,6 @@ urlpatterns = [
     path('create/', CarCreate.as_view()),
     path('user/<int:pk>/', UserDeleteUpdateRetrieve.as_view()),
     path('users/', UserList, name="userlist"),
+
+    path('jobs/', include('elonlar.urls')),
 ]

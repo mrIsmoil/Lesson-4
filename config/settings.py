@@ -1,3 +1,7 @@
+TWILIO_ACCOUNT_SID = 'YOUR_TWILIO_ACCOUNT_SID'
+TWILIO_AUTH_TOKEN = 'YOUR_TWILIO_AUTH_TOKEN'
+TWILIO_PHONE_NUMBER = 'YOUR_TWILIO_PHONE_NUMBER'
+
 
 from pathlib import Path
 
@@ -13,10 +17,10 @@ SECRET_KEY = 'django-insecure-6bamx0!(w!wri#++sz0fdlz*i%+hdnw3iehs%^@^0e7!v6hfp!
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+       
 ALLOWED_HOSTS = []
 
-
+ 
 # Application definition
 
 INSTALLED_APPS = [
@@ -134,3 +138,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'user.Userlar' 
